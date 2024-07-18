@@ -1,10 +1,13 @@
 package com.example.cct_menu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -26,6 +29,27 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater=getMenuInflater();
         inflater.inflate(R.menu.main_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.item1) {
+            Intent intent1 = new Intent(this, SecondActivity.class);
+            this.startActivity(intent1);
+            return true;
+        }
+        if (id == R.id.item2) {
+            Intent intent1 = new Intent(this, MainActivity.class);
+            this.startActivity(intent1);
+            return true;
+        }
+        if (id == R.id.item3) {
+            Intent intent1 = new Intent(this, MainActivity.class);
+            this.startActivity(intent1);
+            return true;
+        }
         return true;
     }
 }
